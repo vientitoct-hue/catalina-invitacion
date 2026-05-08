@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cumpleaños de Catalina 🎀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: linear-gradient(135deg, #c9a0e8 0%, #e8b4d8 100%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 30px 16px 50px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+      border-radius: 28px;
+    }
+
+    .invite-img {
+      width: 100%;
+      display: block;
+      border-radius: 28px;
+      box-shadow: 0 8px 32px rgba(120,0,120,0.25);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 30%;
+      pointer-events: none;
+    }
+
+    .name-banner {
+      background: linear-gradient(90deg, #d46dcf, #b44fc0);
+      border-radius: 30px;
+      padding: 7px 36px;
+      box-shadow: 0 3px 10px rgba(160,60,180,0.35);
+      margin-bottom: 6px;
+    }
+
+    .name-text {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(28px, 8vw, 38px);
+      color: #fff;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 0 rgba(0,0,0,0.18);
+      line-height: 1;
+    }
+
+    .age-wrap {
+      margin: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .gift-icon { font-size: clamp(24px, 6vw, 32px); margin-top: 10px; }
+
+    .age-num {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(52px, 16vw, 72px);
+      color: #f5c842;
+      text-shadow: 3px 3px 0 #d08800;
+      line-height: 1;
+      position: relative;
+    }
+
+    .crown {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 22px;
+    }
+
+    .cat-icon { font-size: clamp(24px, 6vw, 32px); margin-top: 10px; }
+
+    .invite-sub {
+      font-size: clamp(10px, 3vw, 13px);
+      font-weight: 800;
+      color: #c050b8;
+      text-align: center;
+      margin-bottom: 10px;
+      padding: 0 28px;
+      line-height: 1.4;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 4px 0;
+    }
+
+    .info-block { text-align: center; }
+
+    .info-label {
+      font-size: clamp(8px, 2.5vw, 11px);
+      font-weight: 700;
+      color: #a040b8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .info-value {
+      font-size: clamp(12px, 3.5vw, 16px);
+      font-weight: 900;
+      color: #7020a0;
+      line-height: 1.1;
+    }
+
+    .info-sub {
+      font-size: clamp(10px, 2.5vw, 13px);
+      color: #a040b8;
+      font-weight: 700;
+    }
+
+    .dot-sep {
+      width: 8px; height: 8px;
+      background: #f0a8cc;
+      border-radius: 50%;
+    }
+
+    .address-line {
+      font-size: clamp(10px, 3vw, 13px);
+      font-weight: 800;
+      color: #7020a0;
+      margin: 6px 0 2px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .venue-line {
+      font-size: clamp(9px, 2.5vw, 12px);
+      color: #a040b8;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .te-espero {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(18px, 6vw, 26px);
+      color: #d060c0;
+      text-shadow: 1px 1px 0 rgba(160,0,120,0.15);
+      margin-top: 4px;
+    }
+
+    .buttons-area {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin: 18px 0 0;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px 8px;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(12px, 3.5vw, 14px);
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:active { transform: scale(0.96); }
+
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #128c4e);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37,211,102,0.4);
+    }
+
+    .btn-map {
+      background: linear-gradient(135deg, #d46dcf, #9a30b0);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(180,80,180,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="invite-img" src="https://i.imgur.com/vV1yvLY.jpeg" alt="Invitación Gabby's Dollhouse">
+
+    <div class="overlay">
+      <div class="name-banner">
+        <div class="name-text">CATALINA</div>
+      </div>
+
+      <div class="age-wrap">
+        <span class="gift-icon">🎁</span>
+        <span class="age-num">
+          <span class="crown">👑</span>4
+        </span>
+        <span class="cat-icon">🐱</span>
+      </div>
+
+      <p class="invite-sub">¡Te espero para disfrutar juntos<br>de una tarde gatástica! 🐾</p>
+
+      <div class="info-row">
+        <div class="info-block">
+          <div class="info-label">⭐ Fecha</div>
+          <div class="info-value">Sábado 23</div>
+          <div class="info-sub">de Mayo</div>
+        </div>
+        <div class="dot-sep"></div>
+        <div class="info-block">
+          <div class="info-label">⏰ Hora</div>
+          <div class="info-value">15:00 PM</div>
+        </div>
+      </div>
+
+      <div class="address-line">📍 Calle Batallón Colorados 2480</div>
+      <div class="venue-line">Casa Jardín Sarco</div>
+
+      <div class="te-espero">¡Te espero! 🎀</div>
+    </div>
+
+    <div class="buttons-area">
+      <a href="https://wa.me/59167414092?text=Hola!%20Confirmo%20mi%20asistencia%20al%20cumplea%C3%B1os%20de%20Catalina%20%F0%9F%8E%80%F0%9F%90%B1"
+         target="_blank" class="btn btn-whatsapp">
+        💬 Confirmar asistencia
+      </a>
+      <a href="https://maps.app.goo.gl/9a6mFKoXeGGFVRs2A"
+         target="_blank" class="btn btn-map">
+        📍 Ver ubicación
+      </a>
+    </div>
+  </div>
+</body>
+</html>
